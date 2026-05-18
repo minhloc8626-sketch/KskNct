@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        Đăng ký khám sức khỏe người cao tuổi
+        - Trạm Y tế phường Đức Nhuận
+
+    </title>
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+
+        }
+
+        .main-container {
+
+            max-width: 850px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+        }
+
+        .title {
+
+            text-align: center;
+            color: #0d6efd;
+            font-weight: bold;
+            margin-bottom: 10px;
+
+        }
+
+        .sub-title {
+
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 30px;
+
+        }
+
+        .form-label {
+
+            font-weight: 600;
+            font-size: 17px;
+
+        }
+
+        .required {
+
+            color: red;
+
+        }
+
+        .form-control,
+        .form-select {
+
+            padding: 14px;
+            font-size: 18px;
+            border-radius: 10px;
+
+        }
+
+        .btn-submit {
+
+            width: 100%;
+            padding: 16px;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 12px;
+
+        }
+
+        .success-box {
+
+            display: none;
+
+        }
+
+        .loading-box {
+
+            display: none;
+
+        }
+
+        .date-box {
+
+            background: #eef5ff;
+            border: 2px solid #0d6efd;
+            border-radius: 12px;
+            padding: 18px;
+
+        }
+
+        @media(max-width:768px){
+
+            .main-container{
+
+                margin:20px;
+                padding:20px;
+
+            }
+
+            .btn-submit{
+
+                font-size:20px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="main-container">
+
+        <h2 class="title">
+
+            <i class="bi bi-heart-pulse-fill"></i>
+
+            ĐĂNG KÝ KHÁM SỨC KHỎE NGƯỜI CAO TUỔI
+
+        </h2>
+
+        <div class="sub-title">
+
+            Trạm Y tế phường Đức Nhuận
+
+        </div>
+
+        <!-- FORM -->
+
+        <form id="registerForm">
+
+            <!-- NGÀY KHÁM -->
+
+            <div class="mb-4">
+
+                <label class="form-label">
+
+                    Chọn ngày khám
+                    <span class="required">*</span>
+
+                </label>
+
+                <div class="date-box mt-2">
+
+                    <input type="date"
+                        class="form-control form-control-lg"
+                        id="ngaykham"
+                        required>
+
+                    <small class="text-muted mt-2 d-block">
+
+                        Vui lòng chọn ngày thuận tiện để đến khám.
+
+                    </small>
+
+                </div>
+
+            </div>
+
+            <!-- NƠI KHÁM -->
+
+            <div class="mb-4">
+
+                <label class="form-label">
+
+                    Nơi khám
+                    <span class="required">*</span>
+
+                </label>
+
+                <select class="form-select form-select-lg"
+                    id="noikham"
+                    required>
+
+                    <option value="">
+                        -- Chọn nơi khám --
+                    </option>
+
+                    <option>
+
+                        Trạm Y tế phường Đức Nhuận
+                        (80A Thích Quảng Đức, P. Đức Nhuận, TP. HCM)
+
+                    </option>
+
+                    <option>
+
+                        Điểm Y tế 1 phường Đức Nhuận
+                        (166 Thích Quảng Đức, P. Đức Nhuận, TP. HCM)
+
+                    </option>
+
+                    <option>
+
+                        Điểm Y tế 3 phường Đức Nhuận
+                        (23 Nguyễn Văn Đậu, P. Đức Nhuận, TP. HCM)
+
+                    </option>
+
+                </select>
+
+            </div>
+
+            <!-- HỌ TÊN -->
+
+            <div class="mb-4">
+
+                <label class="form-label">
+
+                    Họ và tên
+                    <span class="required">*</span>
+
+                </label>
+
+                <input type="text"
+                    class="form-control form-control-lg"
+                    id="hoten"
+                    placeholder="Nhập họ và tên"
+                    required>
+
+            </div>
+
+            <!-- NGÀY SINH -->
+
+            <div class="mb-4">
+
+                <label class="form-label">
+
+                    Ngày sinh
+                    <span class="required">*</span>
+
+                </label>
+
+                <input type="date"
+                    class="form-control form-control-lg"
+                    id="ngaysinh"
+                    required>
+
+            </div>
+
+            <!-- GIỚI TÍNH -->
+
+            <div class="mb-4">
+
+                <label class="form-label">
+
+                    Giới tính
+                    <span class="required">*</span>
+
+                </label>
+
+                <select class="form-select form-select-lg"
+                    id="gioitinh"
+                    required>
+
+                    <option value="">
+                        -- Chọn giới tính --
+                    </option>
+
+                    <option>
+                        Nam
+                    </option>
+
+                    <option>
+                        Nữ
+                    </option>
+
+                </select>
+
+            </div>
+
+            <!-- CCCD -->
+
+            <div class="mb-4">
+
+                <label class="form-label">
+
+                    Số CCCD
+                    <span class="required">*</span>
+
+                </label>
+
+                <input type="text"
+                    class="form-control form-control-lg"
+                    id="cccd"
+                    maxlength="12"
+                    placeholder="Nhập số CCCD"
+                    required>
+
+            </div>
+
+            <!-- ĐỊA CHỈ -->
+
+            <div class="mb-4">
+
+                <label class="form-label">
+
+                    Nơi ở hiện tại
+                    <span class="required">*</span>
+
+                </label>
+
+                <textarea class="form-control form-control-lg"
+                    id="diachi"
+                    rows="2"
+                    placeholder="Nhập địa chỉ hiện tại"
+                    required></textarea>
+
+            </div>
+
+            <!-- ĐIỆN THOẠI -->
+
+            <div class="mb-4">
+
+                <label class="form-label">
+
+                    Số điện thoại di động
+                    <span class="required">*</span>
+
+                </label>
+
+                <input type="tel"
+                    class="form-control form-control-lg"
+                    id="dienthoai"
+                    placeholder="Nhập số điện thoại"
+                    required>
+
+            </div>
+
+            <!-- BUTTON -->
+
+            <button type="submit"
+                class="btn btn-primary btn-submit"
+                id="submitBtn">
+
+                <i class="bi bi-send-fill"></i>
+
+                ĐĂNG KÝ THÔNG TIN
+
+            </button>
+
+            <!-- LOADING -->
+
+            <div class="text-center mt-4 loading-box"
+                id="loadingBox">
+
+                <div class="spinner-border text-primary"
+                    role="status">
+                </div>
+
+                <div class="mt-2">
+
+                    Đang gửi dữ liệu...
+
+                </div>
+
+            </div>
+
+        </form>
+
+        <!-- SUCCESS -->
+
+        <div class="alert alert-success mt-4 success-box"
+            id="successBox">
+
+            <h5>
+
+                <i class="bi bi-check-circle-fill"></i>
+
+                Đăng ký thành công!
+
+            </h5>
+
+            Thông tin đã được gửi thành công.
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+    // ==========================================
+    // GOOGLE FORM ACTION
+    // ==========================================
+
+    const GOOGLE_FORM_ACTION =
+        "https://docs.google.com/forms/d/e/FORM_ID/formResponse";
+
+    // ==========================================
+    // ENTRY GOOGLE FORM
+    // ==========================================
+
+    const ENTRY_NGAYKHAM = "entry.111111111";
+
+    const ENTRY_NOIKHAM = "entry.222222222";
+
+    const ENTRY_HOTEN = "entry.333333333";
+
+    const ENTRY_NGAYSINH = "entry.444444444";
+
+    const ENTRY_GIOITINH = "entry.555555555";
+
+    const ENTRY_CCCD = "entry.666666666";
+
+    const ENTRY_DIACHI = "entry.777777777";
+
+    const ENTRY_DIENTHOAI = "entry.888888888";
+
+    // ==========================================
+    // GIỚI HẠN KHÔNG CHỌN NGÀY QUÁ KHỨ
+    // ==========================================
+
+    const today = new Date()
+        .toISOString()
+        .split("T")[0];
+
+    document
+        .getElementById("ngaykham")
+        .setAttribute("min", today);
+
+    // ==========================================
+    // SUBMIT FORM
+    // ==========================================
+
+    document
+        .getElementById("registerForm")
+        .addEventListener("submit", function(e){
+
+        e.preventDefault();
+
+        const loadingBox =
+            document.getElementById("loadingBox");
+
+        const successBox =
+            document.getElementById("successBox");
+
+        const submitBtn =
+            document.getElementById("submitBtn");
+
+        loadingBox.style.display = "block";
+
+        submitBtn.disabled = true;
+
+        const formData = new FormData();
+
+        formData.append(
+            ENTRY_NGAYKHAM,
+            document.getElementById("ngaykham").value
+        );
+
+        formData.append(
+            ENTRY_NOIKHAM,
+            document.getElementById("noikham").value
+        );
+
+        formData.append(
+            ENTRY_HOTEN,
+            document.getElementById("hoten").value
+        );
+
+        formData.append(
+            ENTRY_NGAYSINH,
+            document.getElementById("ngaysinh").value
+        );
+
+        formData.append(
+            ENTRY_GIOITINH,
+            document.getElementById("gioitinh").value
+        );
+
+        formData.append(
+            ENTRY_CCCD,
+            document.getElementById("cccd").value
+        );
+
+        formData.append(
+            ENTRY_DIACHI,
+            document.getElementById("diachi").value
+        );
+
+        formData.append(
+            ENTRY_DIENTHOAI,
+            document.getElementById("dienthoai").value
+        );
+
+        fetch(GOOGLE_FORM_ACTION,{
+
+            method:"POST",
+
+            mode:"no-cors",
+
+            body:formData
+
+        })
+
+        .then(()=>{
+
+            loadingBox.style.display = "none";
+
+            successBox.style.display = "block";
+
+            submitBtn.disabled = false;
+
+            document
+                .getElementById("registerForm")
+                .reset();
+
+            window.scrollTo({
+
+                top: document.body.scrollHeight,
+
+                behavior: "smooth"
+
+            });
+
+        })
+
+        .catch(error=>{
+
+            console.error(error);
+
+            loadingBox.style.display = "none";
+
+            submitBtn.disabled = false;
+
+            alert("Không thể gửi dữ liệu.");
+
+        });
+
+    });
+
+</script>
+
+</body>
+
+</html>
